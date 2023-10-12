@@ -6,7 +6,8 @@
 var searchRange = function(nums, target) {
   let left = 0
   let right = nums.length - 1
-  let start, end = -1
+  let start = -1
+  let end = -1
 
   while (left <= right) {
       const mid = Math.floor((left + right) / 2)
@@ -28,7 +29,7 @@ var searchRange = function(nums, target) {
       } else if (nums[mid] > target) {
           right = mid - 1
       } else {
-          left = mid - 1
+          left = mid + 1
       }
   } return [start, end]
 
